@@ -2265,34 +2265,37 @@
       const input = e.target.querySelector('input[type="email"]');
       const btn = e.target.querySelector('button');
 
-      const url = 'https://produtividados.us7.list-manage.com/subscribe/post?u=348f289dea7f005b7e8aa59c2&id=0f51b2d2bf&f_id=00b97be1f0';
-      const data = new FormData();
-      data.append('EMAIL', input.value);
-      data.append('b_348f289dea7f005b7e8aa59c2_0f51b2d2bf', ''); // honeypot anti-spam
-
+      if (btn.disabled) return;
       btn.disabled = true;
       btn.textContent = 'Enviando...';
 
-      fetch(url, { method: 'POST', body: data, mode: 'no-cors' })
-        .then(() => {
+      const callbackName = 'mcCallback_' + Date.now();
+      const url = 'https://produtividados.us7.list-manage.com/subscribe/post-json'
+        + '?u=348f289dea7f005b7e8aa59c2'
+        + '&id=0f51b2d2bf'
+        + '&f_id=00b97be1f0'
+        + '&EMAIL=' + encodeURIComponent(input.value)
+        + '&b_348f289dea7f005b7e8aa59c2_0f51b2d2bf='
+        + '&c=' + callbackName;
+
+      window[callbackName] = function(data) {
+        delete window[callbackName];
+        script.remove();
+        if (data.result === 'success') {
           btn.textContent = '✓ Inscrito!';
           btn.style.background = '#16a34a';
           input.value = '';
-          setTimeout(() => {
-            btn.textContent = 'Inscrever-se';
-            btn.style.background = '';
-            btn.disabled = false;
-          }, 3000);
-        })
-        .catch(() => {
+        } else {
           btn.textContent = 'Erro — tente novamente';
           btn.style.background = '#dc2626';
-          btn.disabled = false;
-          setTimeout(() => {
-            btn.textContent = 'Inscrever-se';
-            btn.style.background = '';
-          }, 3000);
-        });
+        }
+        btn.disabled = false;
+        setTimeout(() => { btn.textContent = 'Inscrever-se'; btn.style.background = ''; }, 3000);
+      };
+
+      const script = document.createElement('script');
+      script.src = url;
+      document.body.appendChild(script);
     }
   </script>
 </body>
