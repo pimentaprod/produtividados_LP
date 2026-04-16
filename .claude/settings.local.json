@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "WebFetch(domain:produtividados.com)",
-      "Bash(gh auth *)",
-      "Bash(git --version)"
-    ]
-  }
-}
