@@ -1,0 +1,136 @@
+
+Quem somos?
+A percepção do grande valor dos dados já é algo difundido em grandes organizações. Porém, ainda existe alguma dificuldade de introdução da cultura data driven em pequenas e médias empresas.
+
+Pensando em atender as necessidades deste público surgiu a ProdutiviDados. Com o objetivo de aumentar a produtividade destas organizações, trazemos soluções personalizadas que eliminam tarefas repetitivas da rotina empresarial.
+
+Além disso, também atuamos no desenvolvimento de painéis (dashboards) que ajudam o dia a dia do gestor, nos quais indicadores mais importantes do negócio são atualizados e monitorados em tempo real, servindo de base para as principais tomadas de decisão na organização.
+
+Tudo isso de maneira acessível, sem comprometer a capacidade de investimento destes negócios.
+
+Nossa Missão
+Transformar dados em resultados e automatizar processos para que pequenas e médias empresas possam crescer de forma eficiente e sustentável.
+
+Nossa Visão
+Ser reconhecida como a principal parceira tecnológica de pequenas e médias empresas no Brasil, democratizando o acesso à automação de processos e análise de dados.
+
+Add Item
+If you feel the desire to write a book, what would it be about?
+Vamos automatizar seus processos?
+Muitos processos repetitivos de uma organização drenam o tempo dos colaboradores e impedem que novos projetos sejam levados adiante.
+
+Na ProdutiviDados nós reduzimos horas de trabalho de funcionários em poucos cliques (ou mesmo nenhum clique!), fazendo sua empresa focar no que realmente interessa para fazer seu negócio decolar.
+
+Quais processos posso automatizar?
+Uma dúvida natural que pode ocorrer é: quais processos são passíveis de automatização? 
+
+De maneira geral, praticamente todo trabalho extenso e/ou repetitivo realizado em um computador pode ser automatizado.
+
+Os mais comuns são:
+
+- Cadastramento de dados em sistemas (lançamento de vendas, cadastro de produtos, etc)
+- Alimentação de planilhas extensas
+- Busca de informações que estão distribuídas em diversos arquivos .doc/.pdf/etc 
+- Extração de informações da internet (sites, APIs, etc)
+
+Tecnologias como Python e N8N são as mais utilizadas para criação das nossas automações.
+
+
+Add Item
+Vamos analisar seus dados?
+O que não se mede, não se gerencia. Analisar a fundo os dados, focando nos principais indicadores organizacionais pode ser a diferença entre o sucesso e o fracasso de um negócio.
+
+Na ProdutiviDados nós alinhamos junto à gestão da empresa quais os indicadores chaves a serem monitorados e desenvolvemos dashboards que serão o braço direito nas principais tomadas de decisão do seu negócio.
+
+Speedcurve Performance Analytics
+Quais dados eu posso analisar?
+No campo da análise de dados, o céu é o limite! Todas as áreas de uma empresa possuem indicadores importantes e que devem ser monitorados pela gestão.
+
+Exemplos de indicadores chave:
+
+- Financeiros: Lucratividade, faturamento, custos, investimentos, fluxo de caixa. 
+- Clientes: Satisfação, taxa de retenção, custo de aquisição de cliente
+- Pessoal: Turnover, absenteísmo, engajamento, satisfação dos colaboradores, tempo médio de contratação
+- Estratégicos: Alcance de objetivos, cumprimento de metas, avaliação de planos de ação, ROI
+
+Entre outros.
+
+Para ter estes indicadores na palma da mão, basta que a empresa possua os dados que os embasam disponíveis através de seus sistemas e de uma cultura orientada a dados. Com eles podemos criar dashboards altamente relevantes que irão guiar o gestor na difícil caminhada que é manter a lucratividade dos negócios.
+
+Na ProdutiviDados, criamos dashboards utilizando principalmente a ferramenta Microsoft Power BI.
+
+Add Item
+Mas eu sou pequeno. Esse trabalho é para mim?
+Mesmo pequenos e médios negócios podem usufruir de automação de processos e análises de dados. 
+
+A ProdutiviDados surgiu exatamente com este objetivo: auxiliar a você, que faz parte de uma pequena ou média empresa, a fazer parte deste mundo da automação de processos e da análise de dados.
+
+Criamos soluções personalizadas e compatíveis com o tamanho do seu negócio.
+
+photo by @tio.mp
+Nossos clientes
+Abaixo estão alguns dos clientes que aumentaram a sua produtividade com apoio da ProdutiviDados.
+
+Quando possível compartilhar, os trabalhos realizados para estas empresas podem ser acessados clicando nas imagens abaixo. Para preservar informações confidenciais, os dados podem estar descaracterizados / serem fictícios.
+
+Add Item
+Depoimentos
+O que nossos clientes falam sobre nós?
+
+"Aqui na empresa eu controlo resultados de 25 unidades subordinadas a mim. Com a solução desenvolvida pela ProdutiviDados, horas  e horas de levantamento de dados e alimentação das planilhas gerenciais se transformaram em incríveis 4 minutos. Um trabalho fantástico!"
+
+Leandro Vaz
+
+Gerente de Operações da Indigo
+
+"Para nossa equipe ter à disposição as informações da World Series of Poker, de maneira prática, sempre foi muito trabalhoso. O dashboard montado pela ProdutiviDados, extraindo dados que são completamente desorganizados direto do site ofical da WSOP, resolveu todos os nossos problemas. Agora o Pokercast tem todas as estatísticas dos jogadores de todo o mundo de maneira rápida e funcional. O resultado ficou sensacional."
+
+Guilherme Kalil
+
+Apresentador do Pokercast
+
+"Com o dashboard produzido pela ProdutiviDados conseguimos saber o resultado das eleições municipais antes mesmo da divulgação pelo TSE. Ainda temos uma análise de desempenho completa das urnas, seções e zonas eleitorais do município. Estamos muito satisfeitos com a solução."
+
+Lourivaldo Pereira
+
+Líder político
+
+Add Item
+Blog da Produtividados
+11 de agosto de 2025
+Automação em Condomínios: Transformando o Sonho de Todo Síndico em Realidade
+Síndicos sonham com uma gestão sem dores de cabeça. Veja como automações condominiais podem transformar esse sonho em realidade.
+
+Read more
+21 de julho de 2025
+7 Sinais de Que Sua Empresa Está Pronta Para Automatizar Tarefas Repetitivas
+Identifique os sinais que sugerem que sua empresa está pronta para a automação
+
+Read more
+26 de junho de 2025
+Como Pequenos Negócios Podem Ganhar com BI e Automação
+Saiba de que formas você pode automatizar processos e analisar os dados da sua empresa
+
+Read more
+View more posts
+Inscrever-se
+Que tal acompanhar as postagens do blog da ProdutiviDados?
+
+Assine nossa newsletter e mantenha-se atualizado
+
+Enter your e-mail address
+
+Inscrever-se
+Ao se cadastrar, você estará nos autorizando a te enviar conteúdo posteriormente. Mas não se preocupe, não iremos te encher de spam. Você poderá se desinscrever a qualquer momento.
+add
+Add Section
+keyboard_arrow_left
+keyboard_arrow_right
+Início Blog Contato
+ProdutiviDados
+Endereço
+Rua Joaquim Nabuco, nº 541, sala 901 a 911 e 1502 a 1511, Edifício Empresarial Trade Center Dom Campelo, Centro
+Petrolina/PE 56302140, BR
+
+87 98142-5843
+contato@produtividados.com

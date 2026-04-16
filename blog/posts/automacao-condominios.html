@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Automação em Condomínios: Transformando o Sonho de Todo Síndico em Realidade — ProdutiviDados</title>
+  <meta name="description" content="Síndicos sonham com uma gestão sem dores de cabeça. Veja como automações condominiais podem transformar esse sonho em realidade." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:   #001834;
+      --blue:   #01488A;
+      --sky:    #0495F0;
+      --white:  #FFFFFF;
+      --gray:   #f4f7fc;
+      --text:   #1a2a3a;
+      --muted:  #5a7a99;
+      --radius: 12px;
+      --shadow: 0 4px 24px rgba(4,149,240,.12);
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Raleway', sans-serif; color: var(--text); background: var(--white); line-height: 1.7; overflow-x: hidden; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .container { width: 90%; max-width: 1160px; margin: 0 auto; }
+
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 14px 28px; border-radius: 8px; font-family: 'Raleway', sans-serif; font-weight: 700; font-size: .95rem; letter-spacing: .04em; cursor: pointer; border: none; transition: background .25s, transform .2s; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--sky); color: var(--white); box-shadow: 0 4px 20px rgba(4,149,240,.35); }
+    .btn-primary:hover { background: #0381d4; }
+    .btn-dark { background: var(--navy); color: var(--white); }
+    .btn-dark:hover { background: var(--blue); }
+
+    .section-tag { display: inline-block; background: rgba(4,149,240,.12); color: var(--sky); font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: 5px 14px; border-radius: 20px; margin-bottom: 14px; }
+
+    .fade-in { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
+
+    /* NAVBAR */
+    #navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 18px 0; background: var(--navy); box-shadow: 0 2px 20px rgba(0,0,0,.35); transition: padding .3s; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { color: rgba(255,255,255,.8); font-size: .9rem; font-weight: 600; letter-spacing: .03em; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--sky); }
+    .nav-menu { display: flex; align-items: center; }
+    .nav-cta { margin-left: 24px; }
+    .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .nav-toggle span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: transform .3s, opacity .3s; }
+    .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-toggle.open span:nth-child(2) { opacity: 0; }
+    .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 999; }
+    .nav-overlay.show { display: block; }
+
+    @media (max-width: 768px) {
+      .nav-toggle { display: flex; }
+      .nav-menu { position: fixed; top: 0; right: -100%; width: 75%; max-width: 300px; height: 100vh; background: var(--navy); display: flex; flex-direction: column; justify-content: center; align-items: center; transition: right .35s ease; box-shadow: -4px 0 30px rgba(0,0,0,.4); }
+      .nav-menu.open { right: 0; }
+      .nav-links { flex-direction: column; gap: 8px; }
+      .nav-links a { font-size: 1.1rem; padding: 12px 24px; }
+      .nav-cta { margin-top: 16px; margin-left: 0; }
+    }
+
+    /* POST HERO */
+    .post-hero {
+      background: var(--navy);
+      padding: 140px 0 72px;
+    }
+    .post-hero-inner { max-width: 760px; }
+    .post-cover { width: 100%; max-width: 760px; height: 360px; object-fit: cover; border-radius: var(--radius); margin: 48px 0 0; display: block; box-shadow: var(--shadow); }
+    .post-meta { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; flex-wrap: wrap; }
+    .post-date { font-size: .82rem; color: rgba(255,255,255,.5); font-weight: 600; }
+    .post-hero h1 { font-size: clamp(1.8rem, 4.5vw, 2.8rem); font-weight: 800; color: var(--white); line-height: 1.2; margin-bottom: 20px; }
+    .post-hero .lead { font-size: 1.1rem; color: rgba(255,255,255,.65); line-height: 1.7; }
+
+    /* POST CONTENT */
+    .post-body { padding: 72px 0; }
+    .post-content { max-width: 760px; }
+
+    .post-content h2 { font-size: 1.5rem; font-weight: 800; color: var(--navy); margin: 48px 0 16px; }
+    .post-content h3 { font-size: 1.15rem; font-weight: 700; color: var(--blue); margin: 32px 0 12px; }
+    .post-content p { font-size: 1rem; color: var(--text); line-height: 1.8; margin-bottom: 20px; }
+    .post-content ul, .post-content ol { padding-left: 24px; margin-bottom: 20px; }
+    .post-content li { font-size: 1rem; color: var(--text); line-height: 1.8; margin-bottom: 8px; }
+    .post-content strong { color: var(--navy); }
+
+    .post-highlight {
+      background: var(--gray);
+      border-left: 4px solid var(--sky);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 24px 28px;
+      margin: 32px 0;
+    }
+    .post-highlight p { margin: 0; font-style: italic; color: var(--muted); }
+
+    /* CTA FINAL */
+    .post-cta { background: var(--navy); border-radius: var(--radius); padding: 48px; text-align: center; margin-top: 64px; }
+    .post-cta h3 { font-size: 1.4rem; font-weight: 800; color: var(--white); margin-bottom: 12px; }
+    .post-cta p { color: rgba(255,255,255,.6); margin-bottom: 28px; }
+
+    /* NAVEGAÇÃO ENTRE POSTS */
+    .post-nav { display: flex; justify-content: space-between; align-items: center; padding: 40px 0; border-top: 1px solid rgba(4,149,240,.12); margin-top: 64px; gap: 16px; flex-wrap: wrap; }
+    .post-nav a { color: var(--sky); font-weight: 700; font-size: .9rem; transition: gap .2s; display: inline-flex; align-items: center; gap: 6px; }
+    .post-nav a:hover { text-decoration: underline; }
+
+    /* FOOTER */
+    footer { background: var(--navy); padding: 72px 0 32px; }
+    .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+    .footer-brand p { font-size: .9rem; color: rgba(255,255,255,.5); line-height: 1.7; }
+    .footer-col h4 { font-size: .82rem; font-weight: 700; color: rgba(255,255,255,.4); text-transform: uppercase; letter-spacing: .12em; margin-bottom: 20px; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .footer-col ul li a { font-size: .9rem; color: rgba(255,255,255,.55); transition: color .2s; }
+    .footer-col ul li a:hover { color: var(--white); }
+    .footer-contact-item { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 16px; }
+    .footer-contact-item .icon { width: 32px; height: 32px; background: rgba(4,149,240,.15); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: .9rem; flex-shrink: 0; }
+    .footer-contact-item div { font-size: .88rem; color: rgba(255,255,255,.55); line-height: 1.5; }
+    .footer-contact-item div strong { display: block; color: rgba(255,255,255,.8); font-size: .82rem; margin-bottom: 2px; }
+    .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,.08); margin-bottom: 24px; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .footer-bottom p { font-size: .82rem; color: rgba(255,255,255,.35); }
+
+    @media (max-width: 768px) {
+      .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .post-cta { padding: 32px 24px; }
+    }
+
+    #scroll-top { position: fixed; bottom: 32px; right: 32px; width: 44px; height: 44px; background: var(--sky); color: var(--white); border: none; border-radius: 50%; font-size: 1rem; cursor: pointer; opacity: 0; pointer-events: none; transition: opacity .3s, transform .2s; z-index: 999; }
+    #scroll-top.show { opacity: 1; pointer-events: all; }
+    #scroll-top:hover { transform: translateY(-3px); }
+  </style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a href="../../index.html" class="nav-logo">
+      <img src="../../Imagens/logo.png" alt="ProdutiviDados" style="height:38px;width:auto;display:block;">
+    </a>
+    <div class="nav-overlay" id="navOverlay"></div>
+    <div class="nav-menu" id="navMenu">
+      <ul class="nav-links">
+        <li><a href="../../index.html#inicio" class="nav-link">Início</a></li>
+        <li><a href="../../index.html#servicos" class="nav-link">Serviços</a></li>
+        <li><a href="../../index.html#sobre" class="nav-link">Sobre</a></li>
+        <li><a href="../../index.html#depoimentos" class="nav-link">Depoimentos</a></li>
+        <li><a href="../index.html" class="nav-link active">Blog</a></li>
+        <li><a href="../../index.html#contato" class="nav-link">Contato</a></li>
+      </ul>
+      <a href="mailto:contato@produtividados.com" class="btn btn-primary nav-cta">Fale Conosco</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO DO POST -->
+<div class="post-hero">
+  <div class="container">
+    <div class="post-hero-inner fade-in">
+      <div class="post-meta">
+        <span class="section-tag">Automação</span>
+        <span class="post-date">11 de agosto de 2025</span>
+      </div>
+      <h1>Automação em Condomínios: Transformando o Sonho de Todo Síndico em Realidade</h1>
+      <p class="lead">Síndicos sonham com uma gestão sem dores de cabeça. Veja como automações condominiais podem transformar esse sonho em realidade.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CONTEÚDO -->
+<div class="post-body">
+  <div class="container">
+    <img src="../../Imagens/sindico.png" alt="Automação em Condomínios" class="post-cover fade-in">
+    <div class="post-content fade-in">
+
+      <p>Ser síndico nunca foi fácil. Entre cobranças de inadimplentes, convocações de assembleia, controle de prestadores de serviço e atendimento de moradores, a rotina pode se tornar exaustiva — especialmente quando a maior parte dessas tarefas depende de processos manuais e planilhas desatualizadas.</p>
+
+      <p>A boa notícia é que a tecnologia chegou para mudar esse cenário. Automações bem aplicadas podem eliminar grande parte do trabalho operacional repetitivo, liberando o síndico para focar no que realmente importa: a gestão estratégica do condomínio.</p>
+
+      <h2>Por que os processos manuais travam a gestão condominial?</h2>
+
+      <p>A maioria dos condomínios ainda opera com ferramentas antigas: planilhas Excel, WhatsApp como canal oficial de comunicação e boletos gerados um a um. Esse modelo cria vários problemas:</p>
+
+      <ul>
+        <li>Informações descentralizadas e difíceis de consultar</li>
+        <li>Erros humanos em cobranças e prestação de contas</li>
+        <li>Demora no atendimento de solicitações dos moradores</li>
+        <li>Dificuldade em provar transparência nas decisões financeiras</li>
+        <li>Sobrecarga do síndico com tarefas que poderiam ser automatizadas</li>
+      </ul>
+
+      <div class="post-highlight">
+        <p>"Um síndico que passa horas controlando inadimplência manualmente está trabalhando <em>no</em> condomínio, não <em>pelo</em> condomínio."</p>
+      </div>
+
+      <h2>O que pode ser automatizado num condomínio?</h2>
+
+      <h3>1. Cobrança e controle de inadimplência</h3>
+      <p>Sistemas automatizados enviam lembretes de vencimento por WhatsApp ou e-mail, registram pagamentos em tempo real e geram relatórios de inadimplência sem intervenção manual. O síndico recebe alertas apenas quando uma situação exige ação.</p>
+
+      <h3>2. Comunicados e assembleias</h3>
+      <p>Convocações, atas e comunicados podem ser gerados e enviados automaticamente para todos os moradores com poucos cliques. Plataformas modernas permitem até assembleias virtuais com registro de presença e votação digital.</p>
+
+      <h3>3. Controle de acesso e portaria</h3>
+      <p>Câmeras com reconhecimento facial, controle de visitantes via aplicativo e registro automatizado de entrada e saída eliminam a dependência de processos manuais na portaria, aumentando a segurança e reduzindo custos.</p>
+
+      <h3>4. Ordens de serviço e manutenções</h3>
+      <p>Um sistema de chamados permite que moradores registrem solicitações pelo celular. O síndico acompanha o status de cada solicitação, define prioridades e mantém histórico completo de todas as manutenções realizadas.</p>
+
+      <h3>5. Prestação de contas</h3>
+      <p>Dashboards financeiros atualizam automaticamente receitas e despesas, gerando relatórios mensais com gráficos que qualquer morador consegue interpretar — sem precisar pedir planilhas ao síndico.</p>
+
+      <h2>Por onde começar?</h2>
+
+      <p>A automação condominial não precisa acontecer de uma vez. O caminho mais eficaz é começar pelos pontos de maior dor: geralmente, a cobrança de taxas e a comunicação com moradores são as primeiras áreas a automatizar, pois geram retorno imediato e visível.</p>
+
+      <p>A ProdutiviDados desenvolve soluções personalizadas para condomínios de diferentes portes — desde pequenos condomínios residenciais até grandes empreendimentos comerciais. Cada projeto começa por um diagnóstico dos processos atuais para identificar onde a automação trará mais impacto.</p>
+
+      <div class="post-cta">
+        <h3>Quer automatizar a gestão do seu condomínio?</h3>
+        <p>Fale com a ProdutiviDados e descubra quais processos podem ser simplificados no seu caso.</p>
+        <a href="mailto:contato@produtividados.com" class="btn btn-primary">Fale com a gente</a>
+      </div>
+
+      <div class="post-nav">
+        <a href="../index.html">← Voltar ao Blog</a>
+        <a href="7-sinais-automatizar.html">Próximo artigo →</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="../../Imagens/logo.png" alt="ProdutiviDados" style="height:38px;width:auto;display:block;margin-bottom:12px;">
+        <p>Transformamos dados em decisões e automatizamos processos para que pequenas e médias empresas alcancem alta performance.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Links Rápidos</h4>
+        <ul>
+          <li><a href="../../index.html#inicio">Início</a></li>
+          <li><a href="../../index.html#servicos">Serviços</a></li>
+          <li><a href="../../index.html#sobre">Sobre</a></li>
+          <li><a href="../../index.html#depoimentos">Depoimentos</a></li>
+          <li><a href="../index.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <div class="footer-contact-item">
+          <div class="icon">📞</div>
+          <div><strong>Telefone</strong>(87) 98142-5843</div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="icon">✉️</div>
+          <div><strong>E-mail</strong><a href="mailto:contato@produtividados.com" style="color:rgba(255,255,255,.55)">contato@produtividados.com</a></div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="icon">📍</div>
+          <div><strong>Endereço</strong>Rua Joaquim Nabuco, nº 541, sala 901–911<br>Ed. Trade Center Dom Campelo — Petrolina/PE</div>
+        </div>
+      </div>
+    </div>
+    <hr class="footer-divider" />
+    <div class="footer-bottom">
+      <p>© 2025 ProdutiviDados. Todos os direitos reservados.</p>
+      <p>Desenvolvido com ❤️ para PMEs brasileiras</p>
+    </div>
+  </div>
+</footer>
+
+<button id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Voltar ao topo">▲</button>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('navMenu');
+  const overlay = document.getElementById('navOverlay');
+  function closeMenu() { toggle.classList.remove('open'); menu.classList.remove('open'); overlay.classList.remove('show'); }
+  toggle.addEventListener('click', () => { const open = menu.classList.toggle('open'); toggle.classList.toggle('open', open); overlay.classList.toggle('show', open); });
+  overlay.addEventListener('click', closeMenu);
+  document.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', closeMenu));
+  window.addEventListener('scroll', () => { document.getElementById('scroll-top').classList.toggle('show', window.scrollY > 400); });
+  const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
