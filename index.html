@@ -1107,7 +1107,6 @@
 
     .newsletter-inner .section-title {
       color: var(--white);
-      white-space: nowrap;
     }
 
     .newsletter-inner .section-sub {
@@ -1124,7 +1123,7 @@
 
     .newsletter-form input {
       flex: 1;
-      min-width: 240px;
+      min-width: min(240px, 100%);
       padding: 14px 20px;
       border-radius: 8px;
       border: 1px solid rgba(255, 255, 255, .2);
@@ -1149,6 +1148,25 @@
       margin-top: 16px;
       font-size: .8rem;
       color: rgba(255, 255, 255, .4);
+    }
+
+    @media (max-width: 600px) {
+      .newsletter-inner {
+        max-width: 100%;
+        padding: 0 4px;
+      }
+
+      .newsletter-form {
+        flex-direction: column;
+      }
+
+      .newsletter-form input,
+      .newsletter-form .btn {
+        width: 100%;
+        min-width: unset;
+        text-align: center;
+        justify-content: center;
+      }
     }
 
     /* ════════════════════
@@ -2246,10 +2264,35 @@
       e.preventDefault();
       const input = e.target.querySelector('input[type="email"]');
       const btn = e.target.querySelector('button');
-      btn.textContent = '✓ Inscrito!';
-      btn.style.background = '#16a34a';
-      input.value = '';
-      setTimeout(() => { btn.textContent = 'Inscrever-se'; btn.style.background = ''; }, 3000);
+
+      const url = 'https://produtividados.us7.list-manage.com/subscribe/post?u=348f289dea7f005b7e8aa59c2&id=0f51b2d2bf&f_id=00b97be1f0';
+      const data = new FormData();
+      data.append('EMAIL', input.value);
+      data.append('b_348f289dea7f005b7e8aa59c2_0f51b2d2bf', ''); // honeypot anti-spam
+
+      btn.disabled = true;
+      btn.textContent = 'Enviando...';
+
+      fetch(url, { method: 'POST', body: data, mode: 'no-cors' })
+        .then(() => {
+          btn.textContent = '✓ Inscrito!';
+          btn.style.background = '#16a34a';
+          input.value = '';
+          setTimeout(() => {
+            btn.textContent = 'Inscrever-se';
+            btn.style.background = '';
+            btn.disabled = false;
+          }, 3000);
+        })
+        .catch(() => {
+          btn.textContent = 'Erro — tente novamente';
+          btn.style.background = '#dc2626';
+          btn.disabled = false;
+          setTimeout(() => {
+            btn.textContent = 'Inscrever-se';
+            btn.style.background = '';
+          }, 3000);
+        });
     }
   </script>
 </body>
