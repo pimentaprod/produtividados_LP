@@ -384,12 +384,11 @@
     }
 
     .hero-title {
-      font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+      font-size: clamp(1.8rem, 5.5vw, 3.8rem);
       font-weight: 800;
       color: var(--white);
       line-height: 1.15;
       margin-bottom: 24px;
-      white-space: nowrap;
     }
 
     .hero-title span {
@@ -517,6 +516,48 @@
 
       .hero-visual {
         display: none;
+      }
+    }
+
+    @media (max-width: 600px) {
+      #inicio {
+        padding: 100px 0 60px;
+        align-items: flex-start;
+      }
+
+      .hero-badge {
+        font-size: .72rem;
+        padding: 5px 12px;
+        margin-bottom: 20px;
+      }
+
+      .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 28px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        margin-bottom: 36px;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+      }
+
+      .hero-stats {
+        gap: 8px;
+      }
+
+      .hero-stat {
+        padding: 8px 12px;
+      }
+
+      .hero-stat span {
+        white-space: normal;
+        font-size: .78rem;
       }
     }
 
