@@ -2168,24 +2168,36 @@
       btn.disabled = true;
       btn.textContent = 'Enviando...';
 
-      const name = form.name.value;
-      const email = form.email.value;
-      const phone = form.phone.value;
-      const company = form.company.value;
-      const subject = form.subject.value;
-      const message = form.message.value;
+      const data = {
+        name: form.name.value,
+        email: form.email.value,
+        phone: form.phone.value,
+        company: form.company.value,
+        subject: form.subject.value,
+        message: form.message.value
+      };
 
-      const body = encodeURIComponent(
-        `Nome: ${name}\nE-mail: ${email}\nTelefone: ${phone}\nEmpresa: ${company}\n\nMensagem:\n${message}`
-      );
-      const mailtoLink = `mailto:contato@produtividados.com?subject=${encodeURIComponent('Contato pelo site: ' + subject)}&body=${body}`;
-
-      window.location.href = mailtoLink;
-
-      setTimeout(() => {
-        form.style.display = 'none';
-        document.getElementById('contactSuccess').style.display = 'block';
-      }, 800);
+      fetch('https://formspree.io/f/xzdyezay', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data.ok) {
+            form.style.display = 'none';
+            document.getElementById('contactSuccess').style.display = 'block';
+          } else {
+            btn.disabled = false;
+            btn.textContent = 'Enviar Mensagem →';
+            alert('Erro ao enviar. Tente novamente.');
+          }
+        })
+        .catch(() => {
+          btn.disabled = false;
+          btn.textContent = 'Enviar Mensagem →';
+          alert('Erro ao enviar. Tente novamente.');
+        });
     }
 
     // ── Newsletter ──
